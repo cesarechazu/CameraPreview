@@ -20,7 +20,8 @@
     </div>
     <br>
     <button type="button" name="button" onclick="iniciarCamara()">Iniciar Camara</button>
-
+    <br>
+    <button type="button" name="button" onclick="tomarFoto()">Tomar Foto</button>
   </div>
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
@@ -41,17 +42,14 @@
         storeToFile: false,
         disableExifHeaderStripping: false
       };
-
-      console.log("CP: ");
-      console.log(CameraPreview);
-
-
       CameraPreview.startCamera(options);
       CameraPreview.show();
-
-
-      console.log("iniciar camara");
     }
+
+    var tomarFoto=function(){
+
+    }
+
   </script>
 </body>
 

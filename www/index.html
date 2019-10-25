@@ -20,7 +20,8 @@
     </div>
     <br>
     <button type="button" name="button" onclick="iniciarCamara()">Iniciar Camara</button>
-
+    <br>
+    <button type="button" name="button" onclick="tomarFoto()">Tomar Foto</button>
   </div>
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
@@ -41,16 +42,32 @@
         storeToFile: false,
         disableExifHeaderStripping: false
       };
-
-      console.log("CP: ");
-      console.log(CameraPreview);
-
-
       CameraPreview.startCamera(options);
       CameraPreview.show();
+    }
 
+    var tomarFoto = function() {
+      CameraPreview.takePicture({
+        width: 640,
+        height: 640,
+        quality: 85
+      }, function(base64PictureData | filePath) {
+        /*
+          if the storeToFile option is false (the default), then base64PictureData is returned.
+          base64PictureData is base64 encoded jpeg image. Use this data to store to a file or upload.
+          Its up to the you to figure out the best way to save it to disk or whatever for your application.
+        */
 
-      console.log("iniciar camara");
+        /*
+          if the storeToFile option is set to true, then a filePath is returned. Note that the file
+          is stored in temporary storage, so you should move it to a permanent location if you
+          don't want the OS to remove it arbitrarily.
+        */
+
+        // One simple example is if you are going to use it inside an HTML img src attribute then you would do the following:
+        imageSrcData = 'data:image/jpeg;base64,' + base64PictureData;
+        // $('img#my-img').attr('src', imageSrcData);
+      });
     }
   </script>
 </body>
