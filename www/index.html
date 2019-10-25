@@ -24,19 +24,34 @@
     app.initialize();
 
     var iniciarCamara = function() {
+      // let options = {
+      //   x: 50,
+      //   y: 50,
+      //   width: 200,
+      //   height: 200,
+      //   camera: CameraPreview.CAMERA_DIRECTION.BACK,
+      //   toBack: false,
+      //   tapPhoto: true,
+      //   tapFocus: false,
+      //   previewDrag: false,
+      //   storeToFile: false,
+      //   disableExifHeaderStripping: false
+      // };
+
       let options = {
         x: 50,
         y: 50,
         width: 200,
         height: 200,
         camera: CameraPreview.CAMERA_DIRECTION.BACK,
-        toBack: false,
+        toBack: true,
         tapPhoto: true,
         tapFocus: false,
-        previewDrag: false,
+        previewDrag: true,
         storeToFile: false,
         disableExifHeaderStripping: false
       };
+
       CameraPreview.startCamera(options);
       CameraPreview.show();
     }
