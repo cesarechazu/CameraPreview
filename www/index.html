@@ -65,10 +65,15 @@
 
       alert("tomar foto");
 
-      CameraPreview.takeSnapshot({quality: 85}, function(base64PictureData) {
+      // CameraPreview.takeSnapshot({quality: 85}, function(base64PictureData) {
+      //   imageSrcData = 'data:image/jpeg;base64,' + base64PictureData;
+      //   alert(imageSrcData);
+      //   // $('img#img-preview').attr('src', imageSrcData);
+      //   document.getElementById('img-preview').setAttribute('src', imageSrcData);
+      // });
+
+      CameraPreview.takePicture(opt, function(base64PictureData) {
         imageSrcData = 'data:image/jpeg;base64,' + base64PictureData;
-        alert(imageSrcData);
-        // $('img#img-preview').attr('src', imageSrcData);
         document.getElementById('img-preview').setAttribute('src', imageSrcData);
       });
 
