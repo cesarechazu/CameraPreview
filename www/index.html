@@ -16,7 +16,7 @@
     <button id="btn-camera" type="button" name="button" onclick="iniciarCamara()">Iniciar Camara</button>
     <button id="btn-foto" type="button" name="button" onclick="tomarFoto()">Tomar Foto</button>
     <br>
-    <img id="img-preview" src="img/usuario.png" width="200" height="200" alt="">
+    <img id="img-preview" src="" width="200" height="200" alt="">
   </div>
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
@@ -50,7 +50,9 @@
 
       CameraPreview.takeSnapshot({quality: 85}, function(base64PictureData) {
         imageSrcData = 'data:image/jpeg;base64,' + base64PictureData;
-        $('img#img-preview').attr('src', imageSrcData);
+        alert(imageSrcData);
+        // $('img#img-preview').attr('src', imageSrcData);
+        document.getElementById('img-preview').setAttribute('src', imageSrcData);
       });
 
     }
