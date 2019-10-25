@@ -50,8 +50,9 @@
 
       CameraPreview.takePicture(opt, function(base64PictureData) {
         imageSrcData = 'data:image/jpeg;base64,' + base64PictureData;
-        $('#img-preview').attr('src', imageSrcData);
-        alert("foto tomada");
+        // $('#img-preview').attr('src', imageSrcData);
+        // alert("foto tomada");
+        alert(imageSrcData);
       });
 
     }
