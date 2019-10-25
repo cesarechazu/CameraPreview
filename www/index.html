@@ -57,11 +57,7 @@
     }
 
     var tomarFoto = function() {
-      // var opt = {
-      //   width: 200,
-      //   height: 200,
-      //   quality: 50
-      // };
+
 
       alert("tomar foto");
 
@@ -71,6 +67,12 @@
       //   // $('img#img-preview').attr('src', imageSrcData);
       //   document.getElementById('img-preview').setAttribute('src', imageSrcData);
       // });
+
+      var opt = {
+        width: 200,
+        height: 200,
+        quality: 50
+      };
 
       CameraPreview.takePicture(opt, function(base64PictureData) {
         imageSrcData = 'data:image/jpeg;base64,' + base64PictureData;
