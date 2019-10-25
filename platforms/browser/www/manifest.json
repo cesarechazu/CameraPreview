@@ -1,11 +1,11 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "helloworld",
-  "short_name": "helloworld",
-  "version": "com.phonegap.helloworld",
-  "description": "Hello World sample application that responds to the deviceready event.",
-  "author": "PhoneGap Team",
+  "name": "Camera Preview",
+  "short_name": "Camera Preview",
+  "version": "ar.com.cesarechazu.camerapreview",
+  "description": "Aplicación de Ejemplo",
+  "author": "Cesar Mauricio",
   "icons": [],
   "start_url": "index.html"
 }

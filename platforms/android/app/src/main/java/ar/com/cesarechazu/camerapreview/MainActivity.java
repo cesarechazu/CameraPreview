@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.phonegap.helloworld;
+package ar.com.cesarechazu.camerapreview;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
