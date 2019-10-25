@@ -14,14 +14,14 @@
 <body>
   <div class="app">
     <h1>Camara Preview</h1>
-    <div id="deviceready" class="blink">
+    <!-- <div id="deviceready" class="blink">
       <p class="event listening">Connecting to Device</p>
       <p class="event received">Device is Ready</p>
-    </div>
+    </div> -->
+    <button id="btn-camera" type="button" name="button" onclick="iniciarCamara()">Iniciar Camara</button>
+    <button id="btn-foto" type="button" name="button" onclick="tomarFoto()">Tomar Foto</button>
     <br>
-    <button type="button" name="button" onclick="iniciarCamara()">Iniciar Camara</button>
-    <br>
-    <button type="button" name="button" onclick="tomarFoto()">Tomar Foto</button>
+    <img id="img-preview" src="img/usuario.png" width="200" height="200" alt="">
   </div>
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
@@ -30,11 +30,11 @@
 
     var iniciarCamara = function() {
       let options = {
-        x: 0,
-        y: 0,
+        x: 50,
+        y: 50,
         width: 200,
         height: 200,
-        // camera: CameraPreview.CAMERA_DIRECTION.BACK,
+        camera: CameraPreview.CAMERA_DIRECTION.BACK,
         toBack: false,
         tapPhoto: true,
         tapFocus: false,
@@ -46,10 +46,20 @@
       CameraPreview.show();
     }
 
-    var tomarFoto=function(){
+    var tomarFoto = function() {
+      var opt = {
+        width: 640,
+        height: 640,
+        quality: 85
+      };
+
+      CameraPreview.takePicture(opt, function(base64PictureData) {
+        imageSrcData = 'data:image/jpeg;base64,' + base64PictureData;
+        $('#img-preview').attr('src', imageSrcData);
+        alert("foto tomada");
+      });
 
     }
-
   </script>
 </body>
 
