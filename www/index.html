@@ -57,11 +57,13 @@
     }
 
     var tomarFoto = function() {
-      var opt = {
-        width: 200,
-        height: 200,
-        quality: 50
-      };
+      // var opt = {
+      //   width: 200,
+      //   height: 200,
+      //   quality: 50
+      // };
+
+      alert("tomar foto");
 
       CameraPreview.takeSnapshot({quality: 85}, function(base64PictureData) {
         imageSrcData = 'data:image/jpeg;base64,' + base64PictureData;
