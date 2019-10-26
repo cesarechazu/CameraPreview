@@ -67,13 +67,14 @@
       // });
 
       var opt = {
-        width: 200,
-        height: 200,
+        width: 640,
+        height: 640,
         quality: 50
       };
 
       CameraPreview.takePicture(opt, function(base64PictureData) {
         imageSrcData = 'data:image/jpeg;base64,' + base64PictureData;
+        alert(imageSrcData);
         document.getElementById('img-preview').setAttribute('src', imageSrcData);
       });
 
